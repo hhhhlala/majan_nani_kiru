@@ -2,7 +2,7 @@ body {
     font-family: sans-serif;
     text-align: center;
     margin: 0;
-    padding: 20px;
+    padding: 20px 0; /* 上下のpaddingは残し、左右のpaddingを0にする */
     background-color: #f0f0f0;
 }
 
