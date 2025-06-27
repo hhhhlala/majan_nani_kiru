@@ -2,7 +2,7 @@ body {
     font-family: sans-serif;
     text-align: center;
     margin: 0;
-    padding: 20px 0; /* 上下のpaddingは残し、左右のpaddingを0にする */
+    padding: 20px 0;
     background-color: #f0f0f0;
 }
 
@@ -27,11 +27,17 @@ h1 {
 #hand {
     display: flex;
     /* flex-wrap: wrap; */
-    justify-content: flex-start; /* 中央寄せから左寄せに変更 */
+    /* justify-content: flex-start; */ /* ここを削除 */
     margin-top: 20px;
     overflow-x: auto; /* 横スクロールを可能にする */
     white-space: nowrap; /* 牌が折り返さないようにする */
     padding-bottom: 10px; /* スクロールバーのための余白 */
+}
+
+#tile-container {
+    display: flex;
+    justify-content: center; /* 牌を中央寄せにする */
+    flex-shrink: 0; /* コンテナが縮まないようにする */
 }
 
 .tile {

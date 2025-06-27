@@ -1,4 +1,5 @@
 const handDiv = document.getElementById('hand');
+const tileContainer = document.getElementById('tile-container'); // 新しく追加
 const questionText = document.getElementById('question-text');
 const answerText = document.getElementById('answer-text');
 const explanationText = document.getElementById('explanation-text');
@@ -8,7 +9,6 @@ let currentProblem = {};
 
 function getTileImageUrl(tile) {
     let filename = '';
-    // 修正: typeは種類、numは数字
     const type = tile.slice(1); // 例: 'm', 'p', 's', 'z'
     const num = tile.slice(0, 1); // 例: '1', '2', '3', '4', '5', '6', '7', '8', '9', '0'
 
@@ -46,7 +46,7 @@ function displayProblem(problem) {
     questionText.textContent = problem.question;
     answerText.textContent = '';
     explanationText.textContent = '';
-    handDiv.innerHTML = '';
+    tileContainer.innerHTML = ''; // handDivではなくtileContainerをクリア
 
     const hand = problem.handString.split(' ');
 
@@ -60,7 +60,7 @@ function displayProblem(problem) {
             console.error(`画像の読み込みに失敗しました: ${tileImg.src}`);
             tileImg.alt = tile;
         };
-        handDiv.appendChild(tileImg);
+        tileContainer.appendChild(tileImg); // handDivではなくtileContainerに追加
     });
 }
 
