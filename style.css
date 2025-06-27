@@ -27,7 +27,7 @@ h1 {
 #hand {
     display: flex;
     /* flex-wrap: wrap; */
-    justify-content: center;
+    justify-content: flex-start; /* 中央寄せから左寄せに変更 */
     margin-top: 20px;
     overflow-x: auto; /* 横スクロールを可能にする */
     white-space: nowrap; /* 牌が折り返さないようにする */
