@@ -25,21 +25,19 @@ h1 {
 }
 
 #hand {
-    display: flex; /* flexに戻す */
-    justify-content: flex-start; /* コンテンツを左寄せにする */
+    display: block; /* blockに戻す */
     margin-top: 20px;
     overflow-x: auto; /* 横スクロールを可能にする */
-    /* white-space: nowrap; */ /* 不要なので削除 */
+    white-space: nowrap; /* 牌が折り返さないようにする */
     padding-bottom: 10px; /* スクロールバーのための余白 */
     width: 100%; /* 親要素の幅いっぱいに広がるようにする */
+    text-align: center; /* inline-flexの子要素を中央寄せにする */
 }
 
 #tile-container {
-    display: flex;
+    display: inline-flex; /* inline-flexに変更 */
     justify-content: center; /* 牌を中央寄せにする */
-    min-width: fit-content; /* 牌の合計幅まで広がるようにする */
-    margin: auto; /* #hand内で中央寄せにする */
-    flex-shrink: 0; /* 牌が縮まないようにする */
+    min-width: 0; /* 牌の合計幅が画面幅より小さい場合は中央寄せ、大きい場合は牌の合計幅まで広がる */
 }
 
 .tile {
