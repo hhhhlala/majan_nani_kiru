@@ -1,18 +1,97 @@
 body {
     font-family: sans-serif;
     text-align: center;
+    margin: 0;
+    padding: 20px;
+    background-color: #f0f0f0;
+}
+
+h1 {
+    color: #333;
+}
+
+#problem {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+#question-text {
+    font-size: 1.2em;
+    margin-bottom: 15px;
+    color: #555;
 }
 
 #hand {
     display: flex;
+    flex-wrap: wrap; /* 牌が画面幅を超えたら折り返す */
     justify-content: center;
     margin-top: 20px;
 }
 
 .tile {
-    width: 50px;
-    height: 70px;
-    border: 1px solid black;
+    width: 50px; /* デフォルトの牌の幅 */
+    height: 70px; /* デフォルトの牌の高さ */
+    border: 1px solid #ccc;
     margin: 2px;
     cursor: pointer;
+    transition: transform 0.1s ease-in-out;
+}
+
+.tile:hover {
+    transform: translateY(-5px); /* ホバーで少し浮き上がる */
+}
+
+#answer {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-top: 20px;
+}
+
+#answer-text {
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+#explanation-text {
+    color: #666;
+    font-size: 0.9em;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.2s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* スマートフォン向けスタイル */
+@media (max-width: 600px) {
+    .tile {
+        width: 40px; /* スマートフォンでの牌の幅 */
+        height: 56px; /* スマートフォンでの牌の高さ */
+    }
+
+    #question-text {
+        font-size: 1em;
+    }
+
+    button {
+        padding: 8px 15px;
+        font-size: 0.9em;
+    }
 }
