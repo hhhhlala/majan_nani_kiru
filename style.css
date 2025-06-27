@@ -25,9 +25,7 @@ h1 {
 }
 
 #hand {
-    display: flex;
-    /* flex-wrap: wrap; */
-    /* justify-content: flex-start; */
+    display: block; /* flexからblockに戻す */
     margin-top: 20px;
     overflow-x: auto; /* 横スクロールを可能にする */
     white-space: nowrap; /* 牌が折り返さないようにする */
@@ -38,8 +36,8 @@ h1 {
 #tile-container {
     display: flex;
     justify-content: center; /* 牌を中央寄せにする */
-    min-width: 100%; /* 画面幅いっぱいに広がるようにする */
-    /* flex-shrink: 0; */ /* ここは不要なので削除 */
+    min-width: fit-content; /* 牌の合計幅まで広がるようにする */
+    /* 画面幅より小さい場合は中央寄せ、大きい場合は牌の合計幅まで広がる */
 }
 
 .tile {
