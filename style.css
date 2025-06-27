@@ -26,9 +26,12 @@ h1 {
 
 #hand {
     display: flex;
-    flex-wrap: wrap; /* 牌が画面幅を超えたら折り返す */
+    /* flex-wrap: wrap; */
     justify-content: center;
     margin-top: 20px;
+    overflow-x: auto; /* 横スクロールを可能にする */
+    white-space: nowrap; /* 牌が折り返さないようにする */
+    padding-bottom: 10px; /* スクロールバーのための余白 */
 }
 
 .tile {
@@ -38,6 +41,7 @@ h1 {
     margin: 2px;
     cursor: pointer;
     transition: transform 0.1s ease-in-out;
+    flex-shrink: 0; /* 牌が縮まないようにする */
 }
 
 .tile:hover {
